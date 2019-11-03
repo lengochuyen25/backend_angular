@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Price</td>
+    <td>Description</td>
+    <td colspan="2"><button [routerLink]="['/add']">Add new Product</button></td>
+  </tr>
+
+  <tr *ngFor="let item of output; index as i">
+
+    <td>{{item.name}}</td>
+    <td>{{item.price}}</td>
+    <td>{{item.description}}</td>
+
+    <button [routerLink]="['/home',item.id]">view</button>
+    <button [routerLink]="['/home/edit',item.id]">edit</button>
+    <button [routerLink]="['/home/delete',item.id]">delete</button>
+  </tr>
+</table>
