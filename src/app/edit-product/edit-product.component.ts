@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IProduct} from "../product.interface";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProductService} from "../product.service";
 
@@ -12,6 +12,7 @@ import {ProductService} from "../product.service";
 export class EditProductComponent implements OnInit {
   product: IProduct;
   data: FormGroup;
+  message: string;
 
   constructor(private route: ActivatedRoute,
               private productService: ProductService,
@@ -21,9 +22,10 @@ export class EditProductComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.fb.group({
-      name: '',
-      price: '',
-      description: '',
+      id: '',
+      name: ['', [Validators.required]],
+      price: ['', [Validators.required]],
+      description: ['', [Validators.required]],
       author: this.fb.group({
         id: '14',
         name: 'Yann Martel'
@@ -31,6 +33,7 @@ export class EditProductComponent implements OnInit {
       img: 'ngaymai.jpg'
     })
     ;
+
 
     const id = +this.route.snapshot.paramMap.get('id');
     this.productService.getById(id).subscribe(
@@ -46,7 +49,8 @@ export class EditProductComponent implements OnInit {
   }
   editProduct() {
     this.productService.updateProduct(this.data.value).subscribe(next => {
-      this.router.navigate(['/home']);
+
+      this.message = 'Update success';
     });
   }
 

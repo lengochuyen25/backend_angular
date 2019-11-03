@@ -11,6 +11,8 @@ import {ProductService} from "../product.service";
 export class DeleteProductComponent implements OnInit {
 
   product: IProduct;
+  message: string;
+
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
@@ -30,12 +32,12 @@ export class DeleteProductComponent implements OnInit {
   }
   deleteProduct(i: number) {
     this.productService.deleteProduct(i).subscribe( () => {
-      this.router.navigate(['/home']);
+      this.message = 'Xóa sản phẩm thành công!';
     }, this.errorHandle );
 
   }
   errorHandle( error: any) {
-    alert('Thao tac khong thanh');
+    alert('Thao tác xóa không thành công');
   }
 
 }

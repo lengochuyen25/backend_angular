@@ -1,14 +1,32 @@
-<table>
-  <tr>
-    <td>Name:</td>
-    <td> {{product.name}}</td>
-  </tr>
-  <tr>
-    <td>Price:</td>
-    <td> {{product.price}}</td>
-  </tr>
-  <tr>
-    <td>Description:</td>
-    <td> {{product.description}}</td>
-  </tr>
-</table>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>Name: <span>{{product.name}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>Price: <span>{{product.price}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>Description: <span>{{product.description}}</span></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <a [routerLink]="['/home/edit',product.id]">Edit</a>
+      <a [routerLink]="['/home/delete',product.id]">Delete</a>
+
+    </div>
+  </div>
+</div>

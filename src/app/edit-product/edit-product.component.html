@@ -1,31 +1,79 @@
+<!--<form novalidate (ngSubmit)="editProduct()" [formGroup]="data" class="row justify-content-md-center">-->
+<!--  <input type="hidden" formControlName="id">-->
+<!--  -->
+<!--  -->
+<!--  <div class="col-md-8">-->
+<!--    <div class="form-group row">-->
+<!--      <label class="col-md-2 col-form-label">Name:</label>-->
+<!--      <div class="col-md-10">-->
+<!--        <input class="form-control" type="text"  formControlName="name" >-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="col-md-8">-->
+<!--    <div class="form-group row">-->
+<!--      <label  class="col-md-2 col-form-label">Price:</label>-->
+<!--      <div class="col-md-10">-->
+<!--        <input class="form-control" type="text"  formControlName="price">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="col-md-8">-->
+<!--    <div class="form-group row">-->
+<!--      <label  class="col-md-2 col-form-label">Description:</label>-->
+<!--      <div class="col-md-10">-->
+<!--        <input class="form-control" type="text"  formControlName="description">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <input type="submit" value="submit">-->
+<!--</form>-->
+
+
+
+
 <form novalidate (ngSubmit)="editProduct()" [formGroup]="data" class="row justify-content-md-center">
-  <input type="hidden" formControlName="id">
-  <div class="col-md-8">
+  <div class="col-sm-9 message" *ngIf="message">
+    <p>{{message}}</p>
+  </div>
+
+  <div class="col-sm-9">
     <div class="form-group row">
-      <label class="col-md-2 col-form-label">Name:</label>
-      <div class="col-md-10">
-        <input class="form-control" type="text"  formControlName="name" >
+      <label class="col-md-3 col-form-label">Name:</label>
+      <div class="col-md-9">
+        <input class="form-control" type="text"  formControlName="name">
       </div>
     </div>
   </div>
-
-  <div class="col-md-8">
+  <div class="col-md-6 alert-danger" role="alert" *ngIf="data.get('name').invalid && data.get('name').touched">
+    Invalid Name!
+  </div>
+  <div class="col-sm-9">
     <div class="form-group row">
-      <label  class="col-md-2 col-form-label">Price:</label>
-      <div class="col-md-10">
+      <label  class="col-md-3 col-form-label">Price:</label>
+      <div class="col-md-9">
         <input class="form-control" type="text"  formControlName="price">
       </div>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-6 alert-danger" role="alert" *ngIf="data.get('price').invalid && data.get('price').touched">
+    Invalid Price!
+  </div>
+  <div class="col-sm-9">
     <div class="form-group row">
-      <label  class="col-md-2 col-form-label">Description:</label>
-      <div class="col-md-10">
+      <label  class="col-md-3 col-form-label">Description:</label>
+      <div class="col-md-9">
         <input class="form-control" type="text"  formControlName="description">
       </div>
     </div>
   </div>
-  <input type="submit" value="submit">
+  <div class="col-md-6 alert-danger" role="alert" *ngIf="data.get('description').invalid && data.get('description').touched">
+    Invalid Description!
+  </div>
+  <div class="col-sm-9">
+    <div class="form-group row">
+      <input type="submit" value="submit">
+    </div>
+  </div>
 </form>
-
-

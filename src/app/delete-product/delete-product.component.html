@@ -1,16 +1,37 @@
-<table>
-  <tr>
-    <td>Name:</td>
-    <td> {{product.name}}</td>
-  </tr>
-  <tr>
-    <td>Price:</td>
-    <td> {{product.price}}</td>
-  </tr>
-  <tr>
-    <td>Description:</td>
-    <td> {{product.description}}</td>
-  </tr>
-  <button (click)="deleteProduct(product.id)">Delete</button>
+<div class="col-sm-9 message" *ngIf="message">
+  <p>{{message}}</p>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>Name: <span>{{product.name}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>Price: <span>{{product.price}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>Description: <span>{{product.description}}</span></p>
+    </div>
+  </div>
+</div>
 
-</table>
+
+
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <button (click)="deleteProduct(product.id)">Delete</button>
+    </div>
+  </div>
+</div>
+
+
+
