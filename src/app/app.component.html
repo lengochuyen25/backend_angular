@@ -1,62 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang chủ</title>
+</head>
 
-<div class="container" style = "height: auto">
-  <div id="fix">
-    <header class="row">
-      <div class = "shopping-mall">
-      </div>
+<body>
 
-    </header>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <a class="navbar-brand" routerLink="/home"><span class="glyphicon glyphicon-home"></span > Trang chủ</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Tài khoản<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-  </div>
-  <div class = "row">
-    <aside class="col-sm-3">
-
-      <div class="panel panel-default">
-        <div class="panel-body">
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <span class = "glyphicon glyphicon-th-list"></span>
-        </div>
-        <div class="list-group">
-          <a routerLink="/home" class="list-group-item">Danh sách sản phẩm </a>
-          <a routerLink="/add" class="list-group-item">Thêm mới sản phẩm</a>
-        </div>
-
-      </div>
-    </aside>
-    <div class="col-sm-9">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-  <footer class="panel panel-default">
-    <div class = "panel-heading text-center">
-      <p>Lê Ngọc Huyền &copy; 2019</p>
-    </div>
-  </footer>
+<div class="top_header">
 </div>
+
+<div>
+  <a  class="menu" routerLink="/home">Danh sách sản phẩm</a> <span class="xo">|</span> <a routerLink="/add" class="menu">Thêm sản phẩm mới</a>
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+
+
+
+<!--<div class="top_header">-->
+<!--</div>-->
+
+<!--<div class="list-group">-->
+<!--  <a routerLink="/home" class="list-group-item">Danh sách sản phẩm </a>-->
+<!--  <router-outlet></router-outlet>-->
+<!--</div>-->
+</body>
+</html>
 
 
 

@@ -1,46 +1,19 @@
-<!--<form novalidate (ngSubmit)="editProduct()" [formGroup]="data" class="row justify-content-md-center">-->
-<!--  <input type="hidden" formControlName="id">-->
-<!--  -->
-<!--  -->
-<!--  <div class="col-md-8">-->
-<!--    <div class="form-group row">-->
-<!--      <label class="col-md-2 col-form-label">Name:</label>-->
-<!--      <div class="col-md-10">-->
-<!--        <input class="form-control" type="text"  formControlName="name" >-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="col-md-8">-->
-<!--    <div class="form-group row">-->
-<!--      <label  class="col-md-2 col-form-label">Price:</label>-->
-<!--      <div class="col-md-10">-->
-<!--        <input class="form-control" type="text"  formControlName="price">-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="col-md-8">-->
-<!--    <div class="form-group row">-->
-<!--      <label  class="col-md-2 col-form-label">Description:</label>-->
-<!--      <div class="col-md-10">-->
-<!--        <input class="form-control" type="text"  formControlName="description">-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
 
-<!--  <input type="submit" value="submit">-->
-<!--</form>-->
-
-
-
+<div class="col-sm-12 message" *ngIf="message">
+  <p class="message">{{message}}</p>
+</div>
 
 <form novalidate (ngSubmit)="editProduct()" [formGroup]="data" class="row justify-content-md-center">
-  <div class="col-sm-9 message" *ngIf="message">
-    <p>{{message}}</p>
-  </div>
-
   <div class="col-sm-9">
     <div class="form-group row">
-      <label class="col-md-3 col-form-label">Name:</label>
+      <label class="col-md-3 col-form-label">Sản phẩm:</label>
       <div class="col-md-9">
         <input class="form-control" type="text"  formControlName="name">
       </div>
@@ -51,7 +24,7 @@
   </div>
   <div class="col-sm-9">
     <div class="form-group row">
-      <label  class="col-md-3 col-form-label">Price:</label>
+      <label  class="col-md-3 col-form-label">Giá:</label>
       <div class="col-md-9">
         <input class="form-control" type="text"  formControlName="price">
       </div>
@@ -62,7 +35,7 @@
   </div>
   <div class="col-sm-9">
     <div class="form-group row">
-      <label  class="col-md-3 col-form-label">Description:</label>
+      <label  class="col-md-3 col-form-label">Mô tả:</label>
       <div class="col-md-9">
         <input class="form-control" type="text"  formControlName="description">
       </div>
@@ -73,7 +46,9 @@
   </div>
   <div class="col-sm-9">
     <div class="form-group row">
-      <input type="submit" value="submit">
+      <input class="submit" type="submit" value="Sửa">
     </div>
   </div>
 </form>
+</body>
+</html>

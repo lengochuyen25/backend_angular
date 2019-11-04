@@ -1,26 +1,40 @@
-<table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<table id="products">
+  <tbody>
   <tr>
-    <td>Name</td>
-    <td>Price</td>
-    <td>Description</td>
-    <td colspan="2"><button [routerLink]="['/add']">Add new Product</button></td>
+    <th>Sản phẩm</th>
+    <th>Giá</th>
+    <th>Mô tả</th>
+    <th>Sửa</th>
+    <th>Xóa</th>
+
   </tr>
 
   <tr *ngFor="let item of output; index as i">
+    <td><a [routerLink]="['/home',item.id]"><p>{{item.name}}</p></a> </td>
 
-    <td>{{item.name}}</td>
+
+
     <td>{{item.price}}</td>
     <td>{{item.description}}</td>
 
-    <button [routerLink]="['/home',item.id]">view</button>
-    <button [routerLink]="['/home/edit',item.id]">edit</button>
-    <button [routerLink]="['/home/delete',item.id]">delete</button>
+    <td><a [routerLink]="['/home/edit',item.id]">Sửa</a></td>
+    <td><a [routerLink]="['/home/delete',item.id]">Xóa</a></td>
+
+<!--    <button [routerLink]="['/home',item.id]">view</button>-->
+<!--    <button [routerLink]="['/home/edit',item.id]">edit</button>-->
+<!--    <button [routerLink]="['/home/delete',item.id]">delete</button>-->
   </tr>
+  </tbody>
 </table>
+</body>
+</html>
 
 
-<!--<div class="col-sm-9">-->
-<!--  <div class="list-group">-->
-<!--    <div class="list-group-item" *ngFor="let item of output" [routerLink]="['/home',item.id]">{{item.name}} {{item.price}}</div>-->
-<!--  </div>-->
-<!--</div>-->

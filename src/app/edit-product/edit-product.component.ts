@@ -49,8 +49,7 @@ export class EditProductComponent implements OnInit {
   }
   editProduct() {
     this.productService.updateProduct(this.data.value).subscribe(next => {
-
-      this.message = 'Update success';
+      this.message = 'Sửa thành công!';
     });
   }
 

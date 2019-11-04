@@ -32,8 +32,7 @@ export class CreateProductComponent implements OnInit {
   }
     addProduct() {
       this.productService.createProduct(this.data.value).subscribe(next => {
-        this.message = 'Add Product Success';
-        this.router.navigate(['/home']);
+        this.message = 'Thêm mới thành công!';
       });
       console.log(this.data.value);
     }

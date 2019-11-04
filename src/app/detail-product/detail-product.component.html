@@ -1,32 +1,24 @@
-<div class="col-sm-9">
-  <div class="list-group">
-    <div class="list-group-item" >
-      <p>Name: <span>{{product.name}}</span></p>
-    </div>
-  </div>
-</div>
-<div class="col-sm-9">
-  <div class="list-group">
-    <div class="list-group-item" >
-      <p>Price: <span>{{product.price}}</span></p>
-    </div>
-  </div>
-</div>
-<div class="col-sm-9">
-  <div class="list-group">
-    <div class="list-group-item" >
-      <p>Description: <span>{{product.description}}</span></p>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div class="list-group list-first ">
+  <p>Sản phẩm: <span>{{product.name}}</span></p>
 </div>
 
 
-<div class="col-sm-9">
-  <div class="list-group">
-    <div class="list-group-item" >
-      <a [routerLink]="['/home/edit',product.id]">Edit</a>
-      <a [routerLink]="['/home/delete',product.id]">Delete</a>
-
-    </div>
-  </div>
+<div class="list-group">
+  <p>Giá: <span>{{product.price}}</span></p>
 </div>
+
+
+<div class="list-group">
+  <p>Mô tả: <span>{{product.description}}</span></p>
+</div>
+
+</body>
+</html>
